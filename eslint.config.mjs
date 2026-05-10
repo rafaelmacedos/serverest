@@ -30,6 +30,13 @@ export default [
     },
   },
   {
-    ignores: ["node_modules/", "cypress/screenshots/", "cypress/videos/"],
+    ignores: [
+      "node_modules/",
+      "cypress/screenshots/",
+      "cypress/videos/",
+      "allure-results/",
+      "allure-report/",
+      "patches/",
+    ],
   },
 ];

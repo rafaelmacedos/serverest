@@ -18,7 +18,7 @@ describe("home", () => {
     cy.url().should("include", "/login");
   });
 
-  it.only("should register a new user and login successfully", () => {
+  it("should register a new user and login successfully", () => {
     const newUser = generateNewUser(false);
 
     RegisterUserPage.visit();

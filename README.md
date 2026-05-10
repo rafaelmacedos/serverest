@@ -46,11 +46,26 @@ Modo headless (executa no terminal):
       e2e/
         api/        testes de API (produtos, usuários)
         web/        testes de Web (home, login, cadastro)
-      fixtures/     massa de dados estática
       support/
         commands/   comandos customizados (apiLogin, etc)
         factories/  geradores de payload usando faker
         pages/      page objects da suíte web
+
+## Relatório Allure
+
+O projeto está integrado com Allure. Para gerar e visualizar o report localmente:
+
+* npm run test:ci, roda as duas suítes capturando dados pro Allure
+* npm run allure:generate, gera o HTML estático em allure-report/
+* npm run allure:open, abre o report no navegador (precisa de Java instalado)
+
+## CI
+
+A pipeline em .github/workflows/tests.yml dispara em push na main, em pull requests e por execução manual. Ela roda as duas suítes, gera o relatório Allure e disponibiliza como artifact do run.
+
+Em runs na main (ou via dispatch manual), o report também é publicado no GitHub Pages, acessível em https://rafaelmacedos.github.io/serverest/.
+
+Setup inicial necessário no repositório: Settings, Pages, Source: GitHub Actions.
 
 ## Lint
 
