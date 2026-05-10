@@ -24,8 +24,8 @@ Variáveis disponíveis:
 
 * apiUrl, URL base da API
 * web_app_url, URL do front
-* userEmail, email de login padrão
-* userPassword, senha de login padrão
+
+Os testes web criam e deletam o próprio usuário via API antes/depois da suíte, então não é necessário configurar credenciais.
 
 ## Como rodar
 
@@ -53,11 +53,12 @@ Modo headless (executa no terminal):
 
 ## Relatório Allure
 
-O projeto está integrado com Allure. Para gerar e visualizar o report localmente:
+O projeto está integrado com Allure. Para gerar e visualizar o report localmente (precisa de Java instalado):
 
-* npm run test:ci, roda as duas suítes capturando dados pro Allure
+* npm run test:report, roda as duas suítes, gera o HTML e abre no navegador (atalho recomendado)
+* npm run test:ci, só roda as duas suítes capturando dados pro Allure
 * npm run allure:generate, gera o HTML estático em allure-report/
-* npm run allure:open, abre o report no navegador (precisa de Java instalado)
+* npm run allure:open, abre um report já gerado
 
 ## CI
 
