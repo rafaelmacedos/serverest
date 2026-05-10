@@ -13,15 +13,7 @@ const LoginPage = {
     cy.visit(this.url);
   },
 
-  login() {
-    cy.env(["userEmail", "userPassword"]).then(({ userEmail, userPassword }) => {
-      this.visit();
-      this.fillCredentials(userEmail, userPassword);
-      this.submit();
-    });
-  },
-
-  loginAs(email, password) {
+  login(email, password) {
     this.visit();
     this.fillCredentials(email, password);
     this.submit();

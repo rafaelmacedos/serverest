@@ -1,0 +1,13 @@
+diff --git a/node_modules/@shelex/cypress-allure-plugin/reporter/index.js b/node_modules/@shelex/cypress-allure-plugin/reporter/index.js
+index 1207013..671ea72 100644
+--- a/node_modules/@shelex/cypress-allure-plugin/reporter/index.js
++++ b/node_modules/@shelex/cypress-allure-plugin/reporter/index.js
+@@ -34,7 +34,7 @@ const logger = require('./debug');
+ const { shouldUseAfterSpec } = require('../writer/useAfterSpec');
+ const { commandIsGherkinStep } = require('./allure-cypress/CucumberHandler');
+ 
+-const { env } = Cypress;
++const env = (key) => Cypress.expose(key);
+ 
+ const shouldEnableGherkinLogging = () => {
+     const logCypress = env('allureLogCypress');
