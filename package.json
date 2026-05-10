@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "cy:open:web": "cypress open",
+    "cy:open:api": "cypress open --config-file cypress.api.config.js",
+    "cy:run:web": "cypress run",
+    "cy:run:api": "cypress run --config-file cypress.api.config.js",
+    "test": "npm run cy:run:api && npm run cy:run:web",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "cypress": "^15.14.2",
+    "eslint": "^10.3.0",
+    "eslint-plugin-cypress": "^6.4.1",
+    "globals": "^17.6.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}
